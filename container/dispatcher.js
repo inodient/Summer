@@ -2,9 +2,24 @@ const fs = require( "fs" );
 const parse = require( "xml-parser" );
 const inspect = require( "util" ).inspect;
 
-const xml = fs.readFileSync( "container/container.xml", "utf-8" );
+const xml = fs.readFileSync( __dirname + "/container.xml", "utf-8" );
 
-const controller = require( "../controller/welcomeController.js" );
+var controller = require( "../controller/welcomeController.js" );
+
+
+
+
+exports.setControllerPath = function( path ){
+  controller = require( path + "/welcomeController.js" );
+}
+
+exports.setBusinessServicePath = function( path ){
+  controller.setBusinessServicePath( path );
+}
+
+exports.setDataServicePath = function( path ){
+  controller.setDataServicePath( path );
+}
 
 
 
@@ -54,7 +69,9 @@ exports.dispatching = function( req ){
         servletController = servlet[2].content;
         servletView = servlet[3].content;
 
-        var model = controller[servletController]( req );
+        controller = require( servletController );
+
+        var model = controller["welcomeController"]( req );
 
         // console.log( model );
       }

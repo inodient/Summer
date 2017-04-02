@@ -1,12 +1,38 @@
 const express = require( "express" );
 const bodyParser = require( "body-parser" );
-const ejs = require( "ejs" ); // **
+const ejs = require( "ejs" );
 
 const app = express();
 
-const dispatcher = require( "./container/dispatcher.js" );
+var dispatcher = require( "./container/dispatcher.js" );
 
-app.set( "views", __dirname + "/views" ); // **
+
+
+
+exports.setViewPath = function( path ){
+  app.set( "views", path + "/views" );
+}
+
+exports.setDispatcherPath = function( path ){
+  dispatcher = require( path + "/dispatcher.js" );
+}
+
+exports.setControllerPath = function( path ){
+  dispatcher.setControllerPath( path );
+}
+
+exports.setBusinessServicePath = function( path ){
+  dispatcher.setBusinessServicePath( path );
+}
+
+exports.setDataServicePath = function( path ){
+  dispatcher.setDataServicePath( path );
+}
+
+
+
+
+// app.set( "views", __dirname + "/views" ); // **
 app.set( "view engine", "ejs" ); // **
 app.engine( "html", ejs.renderFile ); // **
 
@@ -14,9 +40,6 @@ app.use( bodyParser.urlencoded({extended : true}) );
 
 
 
-function test(){
-  console.log( "testFunction" );
-}
 
 app.get( "/*", (req, res) => {
   var dispatched = dispatcher.dispatching( req );
@@ -33,13 +56,6 @@ app.post( "/*", (req, res) => {
 
   res.send( dispatched.model, dispatched.model  );
 } );
-
-
-exports.listenReq = function( port ){
-  app.listen( port, () => {
-    console.log( "Listen port " + port );
-  });
-}
 
 app.listen( "3003", () => {
   console.log( "Listen port 3003...." );

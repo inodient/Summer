@@ -1,4 +1,14 @@
-const db = require( "../common/dataService.js" );
+var db = require( "../common/dataService.js" );
+
+
+
+
+exports.setDataServicePath = function( path ){
+  db = require( path + "/dataService.js" );
+}
+
+
+
 
 exports.businessService = function(){
   console.log( "Business Service called..." );

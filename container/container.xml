@@ -21,7 +21,7 @@
   <url method="get">
     <id>welcome</id>
     <path>/welcome</path>
-    <controller>welcomeController</controller>
+    <controller>../controller/welcomeController</controller>
     <view>welcomeSummer0.ejs</view>
   </url>
 

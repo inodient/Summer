@@ -1,4 +1,18 @@
-const services = require( "../services/business/businessService.js" );
+var services = require( "../services/business/businessService.js" );
+
+
+
+
+exports.setBusinessServicePath = function( path ){
+  services = require( path + "/businessService.js" );
+}
+
+exports.setDataServicePath = function( path ){
+  services.setDataServicePath( path );
+}
+
+
+
 
 exports.welcomeController = function( req ){
   var model = services.businessService();
