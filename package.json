@@ -1,5 +1,5 @@
 {
-  "name": "inodient",
+  "name": "spring-summer",
   "version": "0.9.0",
   "description": "Summer NPM Serverside Framework",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "keywords": [
     "Summer"
   ],
-  "author": "Inodient",
+  "author": "inodient",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.1",
@@ -20,5 +20,12 @@
     "mysql": "^2.13.0",
     "sync-sql": "^1.0.2",
     "xml-parser": "^1.2.1"
+  },
+  "directories": {
+    "container": "container",
+    "controller": "controller",
+    "properties": "properties",
+    "services": "services",
+    "views": "views"
   }
 }
