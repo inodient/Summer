@@ -35,6 +35,12 @@ app.post( "/*", (req, res) => {
 } );
 
 
+exports.listenReq = function( port ){
+  app.listen( port, () => {
+    console.log( "Listen port " + port );
+  });
+}
+
 app.listen( "3003", () => {
   console.log( "Listen port 3003...." );
 } );
