@@ -22,10 +22,13 @@
     "xml-parser": "^1.2.1"
   },
   "directories": {
-    "container": __dirname + "/container",
-    "controller": __dirname + "/controller",
-    "properties": __dirname + "/properties",
-    "services": __dirname + "/services",
-    "views": __dirname + "/views"
+    "container": "container",
+    "controller": "controller",
+    "properties": "properties",
+    "services": "services",
+    "views": "views"
+  },
+  "scripts": {
+    "preinstall": "npm install ../"
   }
 }
