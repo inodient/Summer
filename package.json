@@ -1,6 +1,6 @@
 {
   "name": "spring-summer",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Summer NPM Serverside Framework",
   "main": "index.js",
   "scripts": {
