@@ -4,7 +4,6 @@
   "description": "Summer NPM Serverside Framework",
   "main": "index.js",
   "scripts": {
-    "preinstall": "npm install ../"
   },
   "keywords": [
     "Summer"
@@ -22,7 +21,7 @@
     "xml-parser": "^1.2.1"
   },
   "directories": {
-    "container": "container",
+    "container1": "container",
     "controller": "controller",
     "properties": "properties",
     "services": "services",
