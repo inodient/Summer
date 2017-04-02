@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <form action="/test" method="POST">
+    <input type="text" name="myId">
+    <button type="submit">POST0</button>
+  </form>
+  <div>
+    <% var length = data["rows"].length;
+       var rows = data["rows"];
+    %>
+    <% for( var i=0; i<length; i++ ) { %>
+      <%= rows[i].connectedTime %> <br>
+      <%= rows[i].controller %> <br>
+      <%= rows[i].view %> <br> <br>
+    <% } %>
+  </div>
+</body>
+</html>

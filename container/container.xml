@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <default>
+</default>
+
+<getter>
+  <url id="welcome" originalUrl="/welcome">
+    <controller id="welcomeController" path="/controller" />
+    <view id="welcomeView" path="/views" />
+  </url>
+</getter>
+
+<poster>
+  <url id="welcomePost" originalUrl="/welcomePost">
+    <controller id="welcomPostController" path="/controller" />
+    <view id="welcomePostView" path="/views" />
+  </url>
+</poster> -->
+
+<container>
+  <url method="get">
+    <id>welcome</id>
+    <path>/welcome</path>
+    <controller>welcomeController</controller>
+    <view>welcomeSummer0.ejs</view>
+  </url>
+
+  <url method="get">
+    <id>welcome1</id>
+    <path>/welcome1</path>
+    <controller>welcomeController1</controller>
+    <view>welcomeSummer1.ejs</view>
+  </url>
+
+  <url method="get">
+    <id>welcome2</id>
+    <path>/welcome2</path>
+    <controller>welcomeController2</controller>
+    <view>welcomeSummer2.ejs</view>
+  </url>
+
+  <url method="get">
+    <id>welcome3</id>
+    <path>/welcome3</path>
+    <controller>welcomeController3</controller>
+    <view>welcomeSummer3.ejs</view>
+  </url>
+
+  <url method="post">
+    <id>welcome4</id>
+    <path>/welcome4</path>
+    <controller>welcomeController4</controller>
+    <view>welcomeSummer.ejs</view>
+  </url>
+</container>
